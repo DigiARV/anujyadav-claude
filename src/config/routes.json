@@ -1,0 +1,56 @@
+[
+  {
+    "path": "/",
+    "title": "Anuj Yadav — Keynote Speaker, Trainer & Coach | Anuj The Coach",
+    "description": "Anuj Yadav helps people and businesses turn potential into progress through keynote speaking, corporate training, coaching and practical AI and digital education.",
+    "priority": 1.0
+  },
+  {
+    "path": "/about",
+    "title": "About Anuj Yadav — Coach, Trainer, Entrepreneur & Educator",
+    "description": "Meet Anuj Yadav: coach, trainer, entrepreneur and educator working across business growth, leadership, AI, digital marketing and personal branding.",
+    "priority": 0.8
+  },
+  {
+    "path": "/services",
+    "title": "Work With Anuj — Speaking, Training, Coaching & Education",
+    "description": "Keynote speaking, corporate training, business and leadership coaching, personal branding, and AI and digital marketing education with Anuj Yadav.",
+    "priority": 0.9
+  },
+  {
+    "path": "/speaking",
+    "title": "Invite Anuj Yadav to Speak — Keynotes on Leadership, AI & Growth",
+    "description": "Book Anuj Yadav as a keynote speaker for conferences, corporate events and leadership offsites. Topics include growth mindset, leadership, the future of work and AI for business.",
+    "priority": 1.0
+  },
+  {
+    "path": "/training",
+    "title": "Corporate Training & Workshops — Leadership, Communication, AI",
+    "description": "Customised corporate training and workshops in leadership, communication, soft skills, personal branding, AI adoption and digital marketing, led by Anuj Yadav.",
+    "priority": 0.9
+  },
+  {
+    "path": "/coaching",
+    "title": "Business, Leadership & Executive Coaching with Anuj Yadav",
+    "description": "One-to-one coaching and consulting for founders, leaders and professionals: strategic clarity, executive presence, decision-making and accountable execution.",
+    "priority": 0.8
+  },
+  {
+    "path": "/education",
+    "title": "AI & Digital Marketing Education — Workshops & Live Cohorts",
+    "description": "Practical AI, digital marketing and personal-branding education from Anuj Yadav. Join the waitlist for upcoming workshops and live cohorts.",
+    "priority": 0.7
+  },
+  {
+    "path": "/insights",
+    "title": "Insights — Articles, Videos & Tutorials on AI, Growth & Leadership",
+    "description": "Ideas and practical guidance from Anuj Yadav on AI, business growth, leadership, personal branding and digital marketing.",
+    "priority": 0.6
+  },
+  {
+    "path": "/contact",
+    "title": "Contact Anuj Yadav — Speaking, Training, Coaching & General Enquiries",
+    "description": "Get in touch with Anuj Yadav about keynote speaking, corporate training, coaching, consulting or general enquiries.",
+    "priority": 0.7
+  }
+]
