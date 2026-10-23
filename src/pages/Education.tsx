@@ -1,4 +1,4 @@
-import { Breadcrumbs, Button, Reveal, Rise, SectionHead } from "../components/ui";
+import { Breadcrumbs, Button, Reveal, Rise, SectionHead, TextLink } from "../components/ui";
 import { FinalCta, ProgrammeList } from "../components/sections";
 import { EnquiryForm } from "../components/EnquiryForm";
 import { services } from "../content/services";
@@ -13,14 +13,14 @@ export default function Education() {
           <Rise><p className="eyebrow">AI &amp; digital education</p></Rise>
           <Rise d={1}><h1 id="h1" className="display h-xl" style={{ maxWidth: "15ch" }}>Practical AI and marketing, in plain <em>language.</em></h1></Rise>
           <Rise d={2}><p className="lead">Workshops, live cohorts and future programmes for people who want to use AI and digital marketing in real work — not just read about them.</p></Rise>
-          <Rise d={3}><div className="cta-row"><Button to="#waitlist" variant="signal">Join the waitlist</Button><Button to="/training" variant="ghost">Bring it to your team</Button></div></Rise>
+          <Rise d={3}><div className="cta-row"><Button to="#waitlist" variant="signal">Join the waitlist</Button><TextLink to="/training">Bring it to your team</TextLink></div></Rise>
         </div>
       </section>
 
       <section className="section" aria-labelledby="learn-h">
         <div className="container split split--top">
           <Reveal>
-            <p className="eyebrow"><span className="index">01</span>What you'll learn</p>
+            <p className="eyebrow">What you'll learn</p>
             <h2 id="learn-h" className="display h-lg" style={{ marginTop: "var(--s-4)" }}>Tools, workflows and <em>judgement.</em></h2>
             <p className="prose" style={{ marginTop: "var(--s-5)" }}>{edu.summary}</p>
           </Reveal>
@@ -30,7 +30,7 @@ export default function Education() {
 
       <section className="section on-paper-2" aria-labelledby="prog-h">
         <div className="container">
-          <SectionHead index="02" eyebrow="Programmes" title={<span id="prog-h">On the <em>roadmap.</em></span>} lead="Nothing here is enrolling yet. Dates, formats and pricing will be shared with the waitlist first." />
+          <SectionHead eyebrow="Programmes" title={<span id="prog-h">On the <em>roadmap.</em></span>} lead="Nothing here is enrolling yet. Dates, formats and pricing will be shared with the waitlist first." />
           <ProgrammeList />
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function Education() {
       <section id="waitlist" className="section on-ink" aria-labelledby="wl-h">
         <div className="container form-layout">
           <Reveal className="form-aside">
-            <p className="eyebrow"><span className="index">03</span>Waitlist</p>
+            <p className="eyebrow">Waitlist</p>
             <h2 id="wl-h" className="display h-lg" style={{ marginTop: "var(--s-4)" }}>Be first to <em>know.</em></h2>
             <p className="lead" style={{ marginTop: "var(--s-5)" }}>Tell us which programme interests you most. You'll only hear about workshops and cohorts.</p>
           </Reveal>

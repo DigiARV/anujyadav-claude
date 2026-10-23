@@ -1,4 +1,4 @@
-import { Breadcrumbs, Button, Reveal, Rise, SectionHead } from "../components/ui";
+import { Breadcrumbs, Button, Reveal, Rise, SectionHead, TextLink } from "../components/ui";
 import { DirectContact, FinalCta } from "../components/sections";
 import { EnquiryForm } from "../components/EnquiryForm";
 import { trainingBenefits, trainingFormats, trainingTracks } from "../content/pages";
@@ -12,13 +12,13 @@ export default function Training() {
           <Rise><p className="eyebrow">Corporate training &amp; workshops</p></Rise>
           <Rise d={1}><h1 id="h1" className="display h-xl" style={{ maxWidth: "16ch" }}>Training that changes how Monday <em>works.</em></h1></Rise>
           <Rise d={2}><p className="lead">Practical programmes in leadership, communication, personal branding, AI adoption and digital growth — customised to your people, your context and your goals.</p></Rise>
-          <Rise d={3}><div className="cta-row"><Button to="#enquire" variant="signal">Plan a training programme</Button><Button to="/speaking#invite" variant="ghost">Looking for a keynote?</Button></div></Rise>
+          <Rise d={3}><div className="cta-row"><Button to="#enquire" variant="signal">Plan a training programme</Button><TextLink to="/speaking#invite">Looking for a keynote?</TextLink></div></Rise>
         </div>
       </section>
 
       <section className="section" aria-labelledby="tracks-h">
         <div className="container">
-          <SectionHead index="01" eyebrow="Training areas" title={<span id="tracks-h">Seven areas, built to <em>order.</em></span>} lead="Pick a starting point or combine several into one programme." />
+          <SectionHead eyebrow="Training areas" title={<span id="tracks-h">Seven areas, built to <em>order.</em></span>} lead="Pick a starting point or combine several into one programme." />
           <ul className="ledger">
             {trainingTracks.map((t, i) => (
               <Reveal as="li" key={t.title} className="ledger-row ledger-row--3" delay={i % 3}>
@@ -33,7 +33,7 @@ export default function Training() {
 
       <section className="section on-ink" aria-labelledby="fmt-h">
         <div className="container">
-          <SectionHead index="02" eyebrow="Delivery formats" title={<span id="fmt-h">Designed to fit your <em>calendar.</em></span>} lead="Format, length and group size are shaped with you. Everything below is subject to confirmation." />
+          <SectionHead eyebrow="Delivery formats" title={<span id="fmt-h">Designed to fit your <em>calendar.</em></span>} lead="Format, length and group size are shaped with you. Everything below is subject to confirmation." />
           <Reveal>
             <div className="formats fmt-4">
               {trainingFormats.map((f) => <div className="format" key={f.label}><h3>{f.label}</h3><p>{f.note}</p></div>)}
@@ -50,7 +50,7 @@ export default function Training() {
       <section id="enquire" className="section on-paper-2" aria-labelledby="enq-h">
         <div className="container form-layout">
           <Reveal className="form-aside">
-            <p className="eyebrow"><span className="index">03</span>Training enquiry</p>
+            <p className="eyebrow">Training enquiry</p>
             <h2 id="enq-h" className="display h-lg" style={{ marginTop: "var(--s-4)" }}>Tell us what your team <em>needs.</em></h2>
             <p className="lead" style={{ marginTop: "var(--s-5)" }}>Share the audience and the goal, and Anuj will come back on whether and how he can help.</p>
             <div style={{ marginTop: "var(--s-6)" }}><DirectContact subject="Corporate training enquiry" /></div>

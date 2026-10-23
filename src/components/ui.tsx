@@ -91,25 +91,39 @@ export function Portrait({ src = site.images.portrait, alt = site.images.portrai
           <img src={src} alt={alt} width={1200} height={1500} {...(priority ? { fetchPriority: "high" } : { loading: "lazy" })} decoding="async" />
         </figure>
       ) : (
-        <div className={`portrait portrait--placeholder unmask ${className}`} role="img" aria-label="Portrait placeholder — an approved photo of Anuj Yadav will appear here">
-          <div>
-            <div className="mono" aria-hidden="true">AY</div>
-            <p><strong>Portrait placeholder</strong>Add an approved photo at <code className="k">public/images/</code> and set <code className="k">images.portrait</code> in <code className="k">site.ts</code>.</p>
-          </div>
+        <div className={`portrait portrait--placeholder unmask ${className}`} role="img" aria-label="Brand illustration of rising steps. An approved photo of Anuj Yadav will replace it.">
+          <Ascent />
+          <p className="ph-note"><strong>Portrait to come</strong>Add a photo in <code className="k">public/images/</code>, then set <code className="k">images.portrait</code> in <code className="k">site.ts</code>.</p>
         </div>
       )}
     </div>
   );
 }
 
-export function SectionHead({ index, eyebrow, title, lead }: { index?: string; eyebrow: string; title: ReactNode; lead?: ReactNode }) {
+export function SectionHead({ eyebrow, title, lead }: { eyebrow: string; title: ReactNode; lead?: ReactNode }) {
   return (
     <header className="section-head">
       <Reveal>
-        <p className="eyebrow">{index && <span className="index">{index}</span>}{eyebrow}</p>
+        <p className="eyebrow">{eyebrow}</p>
         <h2 className="display h-lg" style={{ marginTop: "var(--s-4)" }}>{title}</h2>
       </Reveal>
       {lead && <Reveal delay={1}><p className="lead">{lead}</p></Reveal>}
     </header>
+  );
+}
+
+/** Brand mark for the headline idea: potential rising into progress. Replaced by the portrait once supplied. */
+function Ascent() {
+  const steps = [70, 135, 205, 285, 375];
+  const w = 64, gap = 14, base = 440, x0 = 20;
+  return (
+    <svg className="ascent" viewBox="0 0 400 480" aria-hidden="true" focusable="false">
+      {steps.map((h, i) => (
+        <rect key={i} className={i === steps.length - 1 ? "step step--top" : "step"} x={x0 + i * (w + gap)} y={base - h} width={w} height={h} />
+      ))}
+      <path className="trace" pathLength={1} d={`M${x0 + w / 2} ${base - steps[0] - 18} ${steps.map((h, i) => `L${x0 + i * (w + gap) + w / 2} ${base - h - 18}`).join(" ")}`} />
+      <text className="lbl" x={x0} y={base + 28}>POTENTIAL</text>
+      <text className="lbl lbl--hi" x={x0 + 4 * (w + gap) + w} y={base - steps[4] - 36} textAnchor="end">PROGRESS</text>
+    </svg>
   );
 }

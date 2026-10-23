@@ -23,7 +23,7 @@ export default function Home() {
             <Rise d={3}>
               <div className="cta-row">
                 <Button to="/speaking#invite" variant="signal">Invite Anuj to speak</Button>
-                <Button to="/services" variant="ghost">Explore how we can work together</Button>
+                <TextLink to="/services">Explore how we can work together</TextLink>
               </div>
             </Rise>
             <Rise d={4}>
@@ -41,9 +41,9 @@ export default function Home() {
       <section className="section" aria-labelledby="position-h">
         <div className="container">
           <div className="statement-grid">
-            <Reveal><p className="eyebrow"><span className="index">01</span>The thread</p></Reveal>
+            <Reveal><p className="eyebrow">The thread</p></Reveal>
             <div className="stack-lg">
-              <Reveal><h2 id="position-h" className="statement">Leadership, marketing and AI look like different subjects. They share one question: <em className="em">how does progress actually happen?</em></h2></Reveal>
+              <Reveal><h2 id="position-h" className="statement statement--xl">Leadership, marketing and AI look like different subjects. They share one question: <em className="em">how does progress actually happen?</em></h2></Reveal>
               <Reveal delay={1}>
                 <div className="prose"><p>That question runs through everything Anuj teaches and builds — from a keynote to a one-to-one session. The aim is simple: clearer thinking, better communication, and practical next steps people can take this week.</p></div>
                 <p style={{ marginTop: "var(--s-5)" }}><TextLink to="/about">Read Anuj's story</TextLink></p>
@@ -71,7 +71,7 @@ export default function Home() {
       {/* SELECTED SERVICES */}
       <section className="section on-paper-2" aria-labelledby="services-h">
         <div className="container">
-          <SectionHead index="02" eyebrow="Selected services" title={<span id="services-h">Four ways to work <em>with Anuj.</em></span>} lead="Start with the one closest to your need. Each begins with a short conversation, not a sales pitch." />
+          <SectionHead eyebrow="Selected services" title={<span id="services-h">Four ways to work <em>with Anuj.</em></span>} lead="Start with the one closest to your need. Each begins with a short conversation, not a sales pitch." />
           <ServiceIndex items={services.slice(0, 4)} />
           <p style={{ marginTop: "var(--s-6)" }}><TextLink to="/services">See all services</TextLink></p>
         </div>
@@ -81,7 +81,7 @@ export default function Home() {
       <section className="section on-ink" aria-labelledby="keynote-h">
         <div className="container split split--wide-left">
           <Reveal>
-            <p className="eyebrow"><span className="index">03</span>Keynote speaking</p>
+            <p className="eyebrow">Keynote speaking</p>
             <h2 id="keynote-h" className="display h-xl" style={{ marginTop: "var(--s-5)" }}>A talk your audience can <em>act on.</em></h2>
             <p className="lead" style={{ marginTop: "var(--s-6)" }}>For conferences, corporate events, leadership offsites and business summits — shaped around your theme, your people and the point the day needs to land.</p>
             <div className="cta-row" style={{ marginTop: "var(--s-7)" }}>
@@ -104,7 +104,7 @@ export default function Home() {
       <section className="section" aria-labelledby="train-h">
         <div className="container split split--top">
           <Reveal>
-            <p className="eyebrow"><span className="index">04</span>Corporate training</p>
+            <p className="eyebrow">Corporate training</p>
             <h2 id="train-h" className="display h-lg" style={{ marginTop: "var(--s-5)" }}>Skills that show up in <em>Monday's work.</em></h2>
             <p className="prose" style={{ marginTop: "var(--s-5)" }}>Interactive workshops and programmes, customised to your organisation.</p>
             <ul className="ledger" style={{ marginTop: "var(--s-6)" }}>
@@ -115,7 +115,7 @@ export default function Home() {
             <p style={{ marginTop: "var(--s-6)" }}><TextLink to="/training">Corporate training &amp; workshops</TextLink></p>
           </Reveal>
           <Reveal delay={1}>
-            <p className="eyebrow"><span className="index">05</span>Coaching &amp; consulting</p>
+            <p className="eyebrow">Coaching &amp; consulting</p>
             <h2 className="display h-lg" style={{ marginTop: "var(--s-5)" }}>A thinking partner for the <em>next decision.</em></h2>
             <p className="prose" style={{ marginTop: "var(--s-5)" }}>One-to-one coaching and advisory for founders, leaders and professionals.</p>
             <ul className="ledger" style={{ marginTop: "var(--s-6)" }}>
@@ -131,7 +131,7 @@ export default function Home() {
       {/* AI EDUCATION */}
       <section className="section on-paper-2" aria-labelledby="edu-h">
         <div className="container">
-          <SectionHead index="06" eyebrow="AI & digital education" title={<span id="edu-h">Learn the tools. Then <em>use</em> them.</span>} lead="Practical, plain-language education on AI, digital marketing and personal branding. Programmes are being shaped now — join the waitlist to hear first." />
+          <SectionHead eyebrow="AI & digital education" title={<span id="edu-h">Learn the tools. Then <em>use</em> them.</span>} lead="Practical, plain-language education on AI, digital marketing and personal branding. Programmes are being shaped now — join the waitlist to hear first." />
           <ProgrammeList />
           <div className="cta-row" style={{ marginTop: "var(--s-6)" }}>
             <Button to="/education#waitlist" variant="ghost">Join the waitlist</Button>
@@ -142,7 +142,7 @@ export default function Home() {
       {/* INSIGHTS */}
       <section className="section" aria-labelledby="ins-h">
         <div className="container">
-          <SectionHead index="07" eyebrow="Insights" title={<span id="ins-h">Ideas worth <em>sharing.</em></span>} lead="Articles, videos and tutorials on AI, growth, leadership and personal branding." />
+          <SectionHead eyebrow="Insights" title={<span id="ins-h">Ideas worth <em>sharing.</em></span>} lead="Articles, videos and tutorials on AI, growth, leadership and personal branding." />
           <InsightsPreview />
           <p style={{ marginTop: "var(--s-6)" }}><TextLink to="/insights">Visit the insights hub</TextLink></p>
         </div>
@@ -152,7 +152,7 @@ export default function Home() {
       <section className="section on-ink" aria-labelledby="cred-h">
         <div className="container split split--top">
           <Reveal>
-            <p className="eyebrow"><span className="index">08</span>Background</p>
+            <p className="eyebrow">Background</p>
             <h2 id="cred-h" className="display h-lg" style={{ marginTop: "var(--s-5)" }}>One theme, several <em>ventures.</em></h2>
             <p className="prose" style={{ marginTop: "var(--s-5)" }}>Anuj's coaching, training and speaking sit alongside the businesses he builds. Each applies the same idea — helping people and businesses grow — in a different field.</p>
           </Reveal>

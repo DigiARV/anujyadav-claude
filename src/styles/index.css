@@ -39,7 +39,7 @@
   --fs-3: clamp(1.5rem, 1.3rem + 1vw, 2.125rem);
   --fs-4: clamp(2rem, 1.5rem + 2.4vw, 3.5rem);
   --fs-5: clamp(2.5rem, 1.6rem + 4.2vw, 5.25rem);
-  --fs-6: clamp(3rem, 1.4rem + 7.4vw, 8.25rem);
+  --fs-6: clamp(2.9rem, 1.5rem + 6.2vw, 7rem);
 
   /* space (4px base) */
   --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem; --s-5: 1.5rem;
@@ -519,3 +519,82 @@ a.route:hover h3 { color: var(--signal); }
 .on-signal .btn--ghost:hover { --fg: var(--paper); --bd: var(--ink); }
 .on-signal :focus-visible { outline-color: var(--ink); }
 .on-signal .link:hover { color: #3a2d0a; }
+
+
+/* ═══ ART DIRECTION PASS ═══════════════════════════════════════════════════ */
+
+/* 1 · Hero identity: the rising-steps mark replaces the empty portrait box */
+.portrait--placeholder { display: block; padding: var(--s-5) var(--s-5) var(--s-6); background: var(--ink-2); }
+.light .portrait--placeholder { background: var(--ink-2); color: var(--paper); }
+.portrait--placeholder::before { content: none; }
+.ascent { width: 100%; height: 100%; }
+.ascent .step { fill: none; stroke: color-mix(in srgb, var(--paper) 34%, transparent); stroke-width: 1; }
+.ascent .step--top { fill: var(--signal-lit); stroke: none; }
+.ascent .trace { fill: none; stroke: var(--signal-lit); stroke-width: 1.5; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.ascent .lbl { font: 600 10.5px var(--font-body); letter-spacing: 0.24em; fill: var(--paper-soft); }
+.ascent .lbl--hi { fill: var(--signal-lit); }
+.ph-note { position: absolute; left: var(--s-5); right: var(--s-5); bottom: var(--s-4); font-size: 0.6875rem; line-height: 1.5; color: var(--paper-soft); }
+.ph-note strong { display: inline; margin-right: 0.5em; color: var(--paper); letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.625rem; }
+.ph-note code { background: none; padding: 0; color: var(--paper); }
+.portrait--placeholder .ascent { padding-bottom: 2.5rem; }
+@media (max-width: 61.99em) {
+  .hero-art { max-width: none; }
+  .hero-art .portrait--placeholder { aspect-ratio: 5 / 4; }
+  .hero-art .portrait--placeholder .ascent { padding-bottom: 1.75rem; }
+  .hero { padding-bottom: var(--s-7); }
+  .hero-meta { margin-top: var(--s-6); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ascent .step { transform-box: fill-box; transform-origin: 50% 100%; animation: grow 1100ms var(--ease) both; animation-delay: calc(var(--k, 0) * 120ms + 350ms); }
+  .ascent .step:nth-of-type(1) { --k: 0; } .ascent .step:nth-of-type(2) { --k: 1; } .ascent .step:nth-of-type(3) { --k: 2; }
+  .ascent .step:nth-of-type(4) { --k: 3; } .ascent .step:nth-of-type(5) { --k: 4; }
+  @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  .ascent .trace { animation: draw 1500ms var(--ease) 900ms both; }
+  @keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+  .unmask.portrait--placeholder { animation: none; }
+}
+
+/* the one word that carries the promise gets its own underline stroke */
+.hero h1 em { background: linear-gradient(var(--signal-lit), var(--signal-lit)) 0 92% / 100% 0.05em no-repeat; padding-bottom: 0.04em; }
+@media (prefers-reduced-motion: no-preference) { .hero h1 em { animation: stroke 1100ms var(--ease) 700ms both; } @keyframes stroke { from { background-size: 0 0.05em; } to { background-size: 100% 0.05em; } } }
+
+/* 2 · Rhythm: one long pause, then a climax */
+.statement--xl { font-size: clamp(2.25rem, 1.3rem + 3.9vw, 4.75rem); line-height: 1.05; max-width: 20ch; }
+.statement-grid .eyebrow { align-self: start; padding-top: 0.9em; }
+.on-ink .topic-list { margin-top: var(--s-6); }
+.on-ink .topic-list li { padding: var(--s-4) 0; transition: padding var(--t-med) var(--ease), color var(--t-med); }
+.on-ink .topic-list li:hover { padding-left: var(--s-4); color: var(--signal-lit); }
+.on-ink .topic-list span.t { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem); }
+
+/* 3 · The invitation is the loudest object on every screen */
+.btn--signal { min-height: 3.75rem; padding: 0 var(--s-7); font-weight: 700; letter-spacing: 0.005em; }
+.btn--signal .arrow { width: 22px; }
+.header-cta { font-weight: 700; }
+.hero .cta-row, .page-hero .cta-row { gap: var(--s-4) var(--s-6); }
+.hero .link, .page-hero .link { font-size: var(--fs-1); }
+.sticky-invite {
+  position: fixed; inset: auto 0 0 0; z-index: 45; background: var(--ink); border-top: 1px solid var(--ink-line);
+  padding: 0.75rem max(16px, env(safe-area-inset-right, 0px)) calc(0.75rem + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  transform: translateY(105%); transition: transform 480ms var(--ease);
+}
+.sticky-invite.is-on { transform: none; }
+.sticky-invite .btn { width: 100%; min-height: 3.5rem; }
+@media (min-width: 62em) { .sticky-invite { display: none; } }
+
+/* 4 · Route change: a single gold stroke crosses the top edge; content settles in */
+.route-line { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60; background: var(--signal-lit); transform-origin: left; transform: scaleX(0); opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .route-line { animation: route 900ms var(--ease) both; }
+  @keyframes route { 0% { transform: scaleX(0); opacity: 1; } 65% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
+}
+
+/* Instrument Serif ships one weight: never let headings synthesise bold */
+h1, h2, h3, .statement, .display { font-weight: 400; }
+.statement--xl { max-width: 24ch; }
+@media (max-width: 61.99em) { .hero-meta { display: none; } .hero-art { margin-top: calc(var(--s-2) * -1); } }
+@media (max-width: 39.99em) { .hero .cta-row > .btn--signal, .page-hero .cta-row > .btn--signal { width: 100%; } }
+@media (max-width: 61.99em) {
+  .hero-art .portrait--placeholder { aspect-ratio: 1 / 1; padding: var(--s-4); }
+  .hero-art .portrait--placeholder .ascent { padding-bottom: 0; }
+  .ph-note { display: none; }
+}

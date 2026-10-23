@@ -20,7 +20,7 @@ export default function Coaching() {
       <section className="section" aria-labelledby="prob-h">
         <div className="container split split--top">
           <Reveal>
-            <p className="eyebrow"><span className="index">01</span>Who it helps</p>
+            <p className="eyebrow">Who it helps</p>
             <h2 id="prob-h" className="display h-lg" style={{ marginTop: "var(--s-4)" }}>Problems worth <em>working on.</em></h2>
           </Reveal>
           <Reveal delay={1}><ul className="ledger">{coachingProblems.map((p) => <li className="ledger-row" key={p} style={{ gridTemplateColumns: "1fr" }}>{p}</li>)}</ul></Reveal>
@@ -29,7 +29,7 @@ export default function Coaching() {
 
       <section className="section on-ink" aria-labelledby="eng-h">
         <div className="container">
-          <SectionHead index="02" eyebrow="Engagement types" title={<span id="eng-h">Choose the <em>shape.</em></span>} lead="Scope, length and cadence are agreed together after an introductory conversation." />
+          <SectionHead eyebrow="Engagement types" title={<span id="eng-h">Choose the <em>shape.</em></span>} lead="Scope, length and cadence are agreed together after an introductory conversation." />
           <ul className="ledger" style={{ borderColor: "var(--ink-line)" }}>
             {coachingEngagements.map((e) => <Reveal as="li" key={e.title} className="ledger-row"><h3 className="serif">{e.title}</h3><p className="muted">{e.d}</p></Reveal>)}
           </ul>
@@ -38,7 +38,7 @@ export default function Coaching() {
 
       <section className="section" aria-labelledby="how-h">
         <div className="container">
-          <SectionHead index="03" eyebrow="How it works" title={<span id="how-h">Four simple <em>steps.</em></span>} />
+          <SectionHead eyebrow="How it works" title={<span id="how-h">Four simple <em>steps.</em></span>} />
           <ol className="ledger">
             {coachingSteps.map((s) => <Reveal as="li" key={s.n} className="ledger-row"><h3 className="serif"><span className="index" style={{ marginRight: "var(--s-4)" }}>{s.n}</span>{s.t}</h3><p className="muted">{s.d}</p></Reveal>)}
           </ol>
@@ -48,7 +48,7 @@ export default function Coaching() {
       <section id="enquire" className="section on-paper-2" aria-labelledby="enq-h">
         <div className="container form-layout">
           <Reveal className="form-aside">
-            <p className="eyebrow"><span className="index">04</span>Next step</p>
+            <p className="eyebrow">Next step</p>
             <h2 id="enq-h" className="display h-lg" style={{ marginTop: "var(--s-4)" }}>Tell Anuj what you're <em>working on.</em></h2>
             <p className="lead" style={{ marginTop: "var(--s-5)" }}>No commitment is assumed. Fees and availability are discussed after the introductory conversation.</p>
             <div style={{ marginTop: "var(--s-6)" }}><DirectContact subject="Coaching enquiry" /></div>

@@ -6,13 +6,13 @@ function Offerings({ items }: { items: string[] }) {
   return <ul className="ledger">{items.map((o) => <li className="ledger-row" key={o} style={{ gridTemplateColumns: "1fr", padding: "var(--s-3) 0" }}>{o}</li>)}</ul>;
 }
 
-function Detail({ s, n, dark }: { s: Service; n: number; dark?: boolean }) {
+function Detail({ s, dark }: { s: Service; dark?: boolean }) {
   const size = s.tier === 1 ? "h-xl" : s.tier === 2 ? "h-lg" : "h-md";
   return (
     <section id={s.id} className={`section ${s.tier === 1 ? "" : "section--tight"} ${dark ? "on-ink" : s.tier === 3 ? "on-paper-2" : ""}`} aria-labelledby={`${s.id}-h`}>
       <div className="container split split--top">
         <Reveal>
-          <p className="eyebrow"><span className="index">{String(n).padStart(2, "0")}</span>{s.tier === 1 ? "Lead offer" : s.tier === 2 ? "Core offer" : "Also available"}</p>
+          <p className="eyebrow">{s.tier === 1 ? "Lead offer" : s.tier === 2 ? "Core offer" : "Also available"}</p>
           <h2 id={`${s.id}-h`} className={`display ${size}`} style={{ marginTop: "var(--s-4)" }}>{s.title}</h2>
           <p className="lead" style={{ marginTop: "var(--s-5)" }}>{s.outcome} {s.summary}</p>
           <dl style={{ margin: "var(--s-6) 0 0", display: "grid", gap: "var(--s-4)" }}>
@@ -57,8 +57,8 @@ export default function Services() {
         </div>
       </section>
 
-      {tier1.map((s, i) => <Detail key={s.id} s={s} n={i + 1} dark={i % 2 === 1} />)}
-      {rest.map((s, i) => <Detail key={s.id} s={s} n={tier1.length + i + 1} />)}
+      {tier1.map((s, i) => <Detail key={s.id} s={s} dark={i % 2 === 1} />)}
+      {rest.map((s) => <Detail key={s.id} s={s} />)}
 
       <FinalCta title={<>Not sure which fits? <em>Start here.</em></>} lead="A short message is enough. Share the situation and Anuj will suggest the right format." primary={{ label: "Send an enquiry", to: "/contact" }} secondary={{ label: "Invite Anuj to speak", to: "/speaking#invite" }} />
     </>

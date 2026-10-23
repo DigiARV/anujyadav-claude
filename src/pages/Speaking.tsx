@@ -18,7 +18,7 @@ export default function Speaking() {
             <Rise d={3}>
               <div className="cta-row">
                 <Button to="#invite" variant="signal">Invite Anuj to speak</Button>
-                <Button to="#topics" variant="ghost">Explore topics</Button>
+                <TextLink to="#topics">Explore topics</TextLink>
               </div>
             </Rise>
           </div>
@@ -38,7 +38,7 @@ export default function Speaking() {
       {/* INTRO */}
       <section className="section" aria-labelledby="intro-h">
         <div className="container statement-grid">
-          <Reveal><p className="eyebrow"><span className="index">01</span>The speaker</p></Reveal>
+          <Reveal><p className="eyebrow">The speaker</p></Reveal>
           <div className="stack-lg">
             <Reveal><h2 id="intro-h" className="statement">Ideas are easy to applaud. <em className="em">Useful ones change what people do next.</em></h2></Reveal>
             <Reveal delay={1}>
@@ -56,7 +56,7 @@ export default function Speaking() {
       {/* TOPICS */}
       <section id="topics" className="section on-paper-2" aria-labelledby="topics-h">
         <div className="container">
-          <SectionHead index="02" eyebrow="Speaking topics" title={<span id="topics-h">Proposed talks, <em>tailored</em> to you.</span>} lead="These are starting points. Each is adapted to your audience, industry and event objective — or shaped into something custom." />
+          <SectionHead eyebrow="Speaking topics" title={<span id="topics-h">Proposed talks, <em>tailored</em> to you.</span>} lead="These are starting points. Each is adapted to your audience, industry and event objective — or shaped into something custom." />
           <div>
             {topics.map((t, i) => (
               <Reveal key={t.id} className="topic">
@@ -76,7 +76,7 @@ export default function Speaking() {
         <div className="container">
           <div className="split split--top">
             <Reveal>
-              <p className="eyebrow"><span className="index">03</span>Who it's designed for</p>
+              <p className="eyebrow">Who it's designed for</p>
               <h2 id="formats-h" className="display h-lg" style={{ marginTop: "var(--s-4)" }}>Rooms where people need to <em>move.</em></h2>
             </Reveal>
             <Reveal delay={1}><ul className="ledger" style={{ borderColor: "var(--ink-line)" }}>{audiences.map((a) => <li className="ledger-row" key={a} style={{ gridTemplateColumns: "1fr", padding: "var(--s-4) 0" }}>{a}</li>)}</ul></Reveal>
@@ -95,7 +95,7 @@ export default function Speaking() {
       {/* MEDIA / PROOF */}
       <section className="section" aria-labelledby="media-h">
         <div className="container">
-          <SectionHead index="04" eyebrow="See and hear" title={<span id="media-h">Speaker reel &amp; <em>event proof.</em></span>} lead="Event footage, photographs and verified testimonials appear here once available." />
+          <SectionHead eyebrow="See and hear" title={<span id="media-h">Speaker reel &amp; <em>event proof.</em></span>} lead="Event footage, photographs and verified testimonials appear here once available." />
           {site.speakerReelEmbed ? (
             <iframe className="reel" src={site.speakerReelEmbed} title="Anuj Yadav speaker reel" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
           ) : site.showPlaceholders ? (
@@ -113,7 +113,7 @@ export default function Speaking() {
       <section id="invite" className="section on-ink" aria-labelledby="invite-h" style={{ scrollMarginTop: "var(--header-h)" }}>
         <div className="container form-layout">
           <Reveal className="form-aside">
-            <p className="eyebrow"><span className="index">05</span>Speaking enquiry</p>
+            <p className="eyebrow">Speaking enquiry</p>
             <h2 id="invite-h" className="display h-lg" style={{ marginTop: "var(--s-4)" }}>Invite Anuj to <em>speak.</em></h2>
             <p className="lead" style={{ marginTop: "var(--s-5)" }}>Tell us about your event. Date and email are the essentials — everything else helps shape the right session.</p>
             <ul className="checklist" style={{ marginTop: "var(--s-6)" }}>
