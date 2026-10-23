@@ -10,12 +10,17 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="hero on-ink" aria-labelledby="hero-h">
+      <section className={`hero on-ink ${site.images.hero ? "hero--photo" : ""}`} aria-labelledby="hero-h">
+        {site.images.hero && (
+          <div className="hero-bg">
+            <img src={site.images.hero} alt={site.images.portraitAlt} width={site.images.heroWidth} height={site.images.heroHeight} fetchPriority="high" decoding="async" style={{ objectPosition: site.images.heroFocus }} />
+          </div>
+        )}
         <div className="container hero-grid">
-          <div>
+          <div className="hero-copy">
             <Rise><p className="eyebrow">Business growth · Leadership · AI &amp; digital education</p></Rise>
             <Rise d={1}>
-              <h1 id="hero-h" className="display h-hero">Helping people and businesses turn potential into <em>progress.</em></h1>
+              <h1 id="hero-h" className="display h-hero">Helping you <em>thrive</em> in the world of AI.</h1>
             </Rise>
             <Rise d={2}>
               <p className="lead">Anuj Yadav is a coach, trainer and entrepreneur. He works with professionals, founders, teams and organisations on leadership, communication, practical strategy and the sensible use of AI.</p>
@@ -30,10 +35,12 @@ export default function Home() {
               <p className="hero-meta"><span><b>Speaking</b></span><span><b>Training</b></span><span><b>Coaching</b></span><span><b>AI education</b></span></p>
             </Rise>
           </div>
-          <div className="hero-art">
-            <Portrait priority />
-            <span className="hero-art-note">Coach · Trainer · Entrepreneur</span>
-          </div>
+          {!site.images.hero && (
+            <div className="hero-art">
+              <Portrait priority />
+              <span className="hero-art-note">Coach · Trainer · Entrepreneur</span>
+            </div>
+          )}
         </div>
       </section>
 

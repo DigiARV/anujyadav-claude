@@ -75,10 +75,17 @@ export const site = {
   /** Image paths served from /public. `null` = show the clearly-labelled placeholder. */
   images: {
     /** e.g. "/images/anuj-portrait.jpg" — a real, approved portrait (approx. 4:5, min 1600px tall). */
-    portrait: null as string | null,
-    portraitAlt: "Portrait of Anuj Yadav",
+    portrait: "/images/anuj-hero.webp" as string | null,
+    /** CSS object-position used when the photo is cropped (portrait frames). Tune to keep the face in view. */
+    portraitFocus: "72% 30%",
+    portraitAlt: "Anuj Yadav seated at a desk in a dark, warmly lit office, smiling toward the camera",
+    /** Wide hero photograph (landscape, ≥1600px). null = the brand-mark hero is used instead. */
+    hero: "/images/anuj-hero.webp" as string | null,
+    heroFocus: "72% 38%",
+    heroWidth: 1672,
+    heroHeight: 941,
     /** Social sharing card (1200×630). e.g. "/images/og.jpg". Empty = no og:image tag. */
-    og: "",
+    og: "/images/og.jpg",
     /** Optional landscape on-stage photo for the speaking page (16:9). */
     speaking: null as string | null,
   },

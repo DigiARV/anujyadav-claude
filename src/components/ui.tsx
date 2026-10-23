@@ -88,7 +88,7 @@ export function Portrait({ src = site.images.portrait, alt = site.images.portrai
       {offset && <div className="portrait-offset" aria-hidden="true" />}
       {src ? (
         <figure className={`portrait unmask ${className}`}>
-          <img src={src} alt={alt} width={1200} height={1500} {...(priority ? { fetchPriority: "high" } : { loading: "lazy" })} decoding="async" />
+          <img src={src} alt={alt} width={1200} height={1500} style={{ objectPosition: site.images.portraitFocus }} {...(priority ? { fetchPriority: "high" } : { loading: "lazy" })} decoding="async" />
         </figure>
       ) : (
         <div className={`portrait portrait--placeholder unmask ${className}`} role="img" aria-label="Brand illustration of rising steps. An approved photo of Anuj Yadav will replace it.">

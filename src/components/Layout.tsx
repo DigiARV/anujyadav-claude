@@ -32,7 +32,7 @@ function StickyInvite() {
   const [past, setPast] = useState(false);
   const [covered, setCovered] = useState(false);
   useEffect(() => {
-    const on = () => setPast(window.scrollY > 560);
+    const on = () => setPast(window.scrollY > 180);
     on();
     window.addEventListener("scroll", on, { passive: true });
     return () => window.removeEventListener("scroll", on);
