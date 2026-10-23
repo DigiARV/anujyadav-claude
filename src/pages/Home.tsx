@@ -13,7 +13,7 @@ export default function Home() {
       <section className={`hero on-ink ${site.images.hero ? "hero--photo" : ""}`} aria-labelledby="hero-h">
         {site.images.hero && (
           <div className="hero-bg">
-            <img src={site.images.hero} alt={site.images.portraitAlt} width={site.images.heroWidth} height={site.images.heroHeight} fetchPriority="high" decoding="async" style={{ objectPosition: site.images.heroFocus }} />
+            <img src={site.images.hero} alt={site.images.portraitAlt} width={site.images.heroWidth} height={site.images.heroHeight} fetchPriority="high" decoding="async" style={{ "--fm": site.images.heroFocus, "--fd": site.images.heroFocusWide } as React.CSSProperties} />
           </div>
         )}
         <div className="container hero-grid">

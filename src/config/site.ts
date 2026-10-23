@@ -81,8 +81,10 @@ export const site = {
     portraitAlt: "Anuj Yadav seated at a desk in a dark, warmly lit office, smiling toward the camera",
     /** Wide hero photograph (landscape, ≥1600px). null = the brand-mark hero is used instead. */
     hero: "/images/anuj-hero.webp" as string | null,
+    /** object-position on phones / on wide screens (photo is offset right on desktop so text stays clear). */
     heroFocus: "72% 38%",
-    heroWidth: 1672,
+    heroFocusWide: "46% 40%",
+    heroWidth: 1671,
     heroHeight: 941,
     /** Social sharing card (1200×630). e.g. "/images/og.jpg". Empty = no og:image tag. */
     og: "/images/og.jpg",
