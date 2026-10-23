@@ -4,7 +4,7 @@
 
 /* ═══════════════════════════════════════════════════════════════════════════
    DESIGN SYSTEM — Anuj The Coach
-   Direction: editorial. Charcoal + warm paper, one cobalt-violet accent used
+   Direction: editorial. Charcoal + warm paper, one gold accent used
    sparingly as a "signal". Serif display for ideas, grotesk for everything else.
 
    CONTRAST RULES
@@ -23,9 +23,9 @@
   --paper-line: #d8d0bd;
   --ink-soft: #4a4a52;
   --paper-soft: #b4afa3;
-  --signal: #3b28e8;
-  --signal-lit: #a79eff;
-  --signal-wash: #e4e0ff;
+  --signal: #8a6209;
+  --signal-lit: #e0b34a;
+  --signal-wash: #f4e7c3;
   --danger: #b3261e;
   --danger-lit: #ff9b93;
   --ok: #1f6b46;
@@ -75,7 +75,7 @@ ul, ol { padding: 0; list-style: none; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; }
-::selection { background: var(--signal); color: #fff; }
+::selection { background: var(--signal-lit); color: var(--ink); }
 
 :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 2px; }
 .on-ink :focus-visible, .site-header.is-dark :focus-visible { outline-color: var(--signal-lit); }
@@ -146,7 +146,7 @@ button { cursor: pointer; }
 .btn:active { transform: translateY(1px); }
 .btn .arrow { transition: transform var(--t-med) var(--ease); }
 .btn:hover .arrow { transform: translateX(4px); }
-.btn--signal { --bg: var(--signal); --fg: #fff; --bd: var(--signal); --hover-bg: var(--ink); }
+.btn--signal { --bg: var(--signal-lit); --fg: var(--ink); --bd: var(--signal-lit); --hover-bg: var(--ink); }
 .on-ink .btn--signal { --bg: var(--signal-lit); --fg: var(--ink); --bd: var(--signal-lit); --hover-bg: var(--paper); }
 .on-ink .btn--signal:hover { --fg: var(--ink); --bd: var(--paper); }
 .btn--ghost { --bg: transparent; --fg: var(--ink); --bd: var(--ink); --hover-bg: var(--ink); }
@@ -316,7 +316,7 @@ button { cursor: pointer; }
 .on-ink .service-row .outcome { color: var(--paper-soft); }
 .service-row .row-cta { display: flex; align-items: center; gap: var(--s-3); font-weight: 600; font-size: var(--fs-0); }
 .service-row .row-cta .circle { width: 2.75rem; height: 2.75rem; border: 1.5px solid currentColor; border-radius: 50%; display: grid; place-items: center; transition: background-color var(--t-med), color var(--t-med), transform var(--t-med) var(--ease); }
-.service-row:hover .circle { background: var(--signal); border-color: var(--signal); color: #fff; transform: rotate(-45deg); }
+.service-row:hover .circle { background: var(--signal-lit); border-color: var(--signal-lit); color: var(--ink); transform: rotate(-45deg); }
 .on-ink .service-row:hover .circle { background: var(--signal-lit); border-color: var(--signal-lit); color: var(--ink); }
 @media (min-width: 52em) {
   .service-row { grid-template-columns: 4rem 6fr 5fr 11rem; align-items: start; }
@@ -509,21 +509,13 @@ a.route:hover h3 { color: var(--signal); }
 }
 @media print { .site-header, .mobile-menu { display: none; } }
 
-/* closing CTA on signal colour */
-.on-signal { background: var(--signal); color: #fff; }
-.on-signal .eyebrow, .on-signal .lead { color: #e8e5ff; }
-.on-signal .display em { color: #fff; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.12em; }
-.on-signal .btn { --bg: var(--paper); --fg: var(--ink); --bd: var(--paper); --hover-bg: var(--ink); }
-.on-signal .btn:hover { --fg: var(--paper); --bd: var(--ink); }
-.on-signal .btn--ghost { --bg: transparent; --fg: #fff; --bd: #fff; --hover-bg: #fff; }
-.on-signal .btn--ghost:hover { --fg: var(--ink); --bd: #fff; }
-.on-signal :focus-visible { outline-color: #fff; }
-.on-signal .link:hover { color: #fff; }
-
-.about-row { grid-template-columns: 1fr; }
-@media (min-width: 62em) { .about-row { grid-template-columns: 3fr 9fr !important; } }
-@media (min-width: 52em) { .formats.fmt-4 { grid-template-columns: repeat(4, 1fr); } }
-
-/* the light form panel sits inside dark sections — restore light-surface text colours */
-.form-shell .muted, .form-shell .prose { color: var(--ink-soft); }
-.form-shell .link:hover { color: var(--signal); }
+/* closing CTA on gold */
+.on-signal { background: var(--signal-lit); color: var(--ink); }
+.on-signal .eyebrow, .on-signal .lead { color: #3a2d0a; }
+.on-signal .display em { color: var(--ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.12em; }
+.on-signal .btn { --bg: var(--ink); --fg: var(--paper); --bd: var(--ink); --hover-bg: var(--paper); }
+.on-signal .btn:hover { --fg: var(--ink); --bd: var(--paper); }
+.on-signal .btn--ghost { --bg: transparent; --fg: var(--ink); --bd: var(--ink); --hover-bg: var(--ink); }
+.on-signal .btn--ghost:hover { --fg: var(--paper); --bd: var(--ink); }
+.on-signal :focus-visible { outline-color: var(--ink); }
+.on-signal .link:hover { color: #3a2d0a; }
